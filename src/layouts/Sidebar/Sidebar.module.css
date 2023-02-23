@@ -1,0 +1,55 @@
+.sidebar {
+    width: 30%;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+}
+
+.side_head {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.side_head h1 {
+    margin: 0;
+}
+
+.side_notes {
+    height: calc(100vh - 78px);
+    /* overflow-y: scroll; */
+}
+
+.side_single_note {
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.side_note_title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side_note_title p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.side_single_note p {
+    margin: 0;
+}
+
+.side_single_note small {
+    display: block;
+    color: #999;
+}
+
+.side_single_note:hover {
+    background: #ddd;
+    transition: .9s ease;
+}
+
+.side_single_note.active,
+.side_single_note.active small {
+    background: #08c;
+    color: white;
+}

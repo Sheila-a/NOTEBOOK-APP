@@ -61,3 +61,37 @@ export const Burger = () => {
     </>
   );
 };
+
+// export class Burger extends React.Component {
+//   constructor(open) {
+//     super(open);
+//     // this.open = open;
+//     this.state = {
+//       open: false,
+//     };
+
+//     this.clickFxn = this.clickFxn.bind(this);
+//   }
+
+//   clickFxn = (e) => {
+//     this.setState({ open: !this.state.open });
+//   };
+
+//   render() {
+//     return (
+//       <>
+//         <StyledBurger
+//           open={this.open}
+//           onClick={this.clickFxn}
+//           // onClick={() => this.setState(!this.open)}
+//           className="Burger"
+//         >
+//           <div />
+//           <div />
+//           <div />
+//         </StyledBurger>
+//         <HangingNav open={this.open} />
+//       </>
+//     );
+//   }
+// }
