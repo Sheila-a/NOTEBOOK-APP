@@ -12,6 +12,10 @@
     color: white;
 }
 
+.header a:hover {
+    color: blue;
+}
+
 
 .save {
     background-color: #e1e1e1;
