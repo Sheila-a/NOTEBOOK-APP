@@ -11,6 +11,7 @@ const LandingPage = () => {
 
   const [searchText, setSearchText] = useState("");
 
+
   return (
     <div className={design.container}>
       <Header />
