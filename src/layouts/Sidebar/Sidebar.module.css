@@ -15,6 +15,15 @@
     color: rgb(0, 195, 255);
 }
 
+.side_head a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.side_head a:hover {
+    color: rgb(5, 157, 204);
+}
+
 .side_notes {
     height: calc(100vh - 78px);
     overflow-y: scroll;
@@ -66,4 +75,27 @@
 
 .side_single_note.active small {
     color: white;
+}
+
+@media screen and (max-width:1249px) {
+
+    .side_head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:786px) {
+    .sidebar {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:584px) {
+    .sidebar {
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+    }
 }

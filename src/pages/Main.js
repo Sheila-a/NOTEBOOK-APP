@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MainSection from "../layouts/MainSection/MainSection.jsx";
 import Sidebar from "../layouts/Sidebar/Sidebar.jsx";
+import design from "./Main.module.css";
 
-export default function Main(props) {
-  const [notes, setNotes] = useState([]);
+export default function Main() {
+  const [notes, setNotes] = useState(
+    localStorage.notes ? JSON.parse(localStorage.notes) : []
+  );
   const [currentNote, setCurrentNote] = useState(false);
 
-  const onAddNote = (e) => {
-    // e.preventDefault();
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
+
+  const onAddNote = () => {
     const newAddNote = {
       id: Math.floor(Math.random() * 100),
       title: "No Title",
@@ -20,7 +26,19 @@ export default function Main(props) {
   };
 
   const onDeleteNote = (deleteThisId) => {
-    setNotes(notes.filter((note) => note.id !== deleteThisId));
+    setNotes(notes.filter(({ id }) => id !== deleteThisId));
+  };
+
+  const onUpdateNote = (noteUpdated) => {
+    const noteUpdatedArr = notes.map((note) => {
+      if (note.id === noteUpdated.id) {
+        return noteUpdated;
+      }
+
+      return note;
+    });
+
+    setNotes(noteUpdatedArr);
   };
 
   const getCurrentNote = () => {
@@ -28,11 +46,7 @@ export default function Main(props) {
   };
 
   return (
-    <div style={{ display: "flex" }}>
-      {/* <h1>welcome</h1>
-      <StyledBtn type="submit" btnName={"Welcome"} />
-      <Burger />
-      <Card /> */}
+    <div className={design.main}>
       <Sidebar
         notes={notes}
         onAddNote={onAddNote}
@@ -40,7 +54,7 @@ export default function Main(props) {
         currentNote={currentNote}
         setCurrentNote={setCurrentNote}
       />
-      <MainSection currentNote={getCurrentNote()} />
+      <MainSection currentNote={getCurrentNote()} onUpdateNote={onUpdateNote} />
     </div>
   );
 }

@@ -10,7 +10,7 @@ const LandingPage = () => {
   );
 
   const [searchText, setSearchText] = useState("");
-  // ggg
+
 
   return (
     <div className={design.container}>
