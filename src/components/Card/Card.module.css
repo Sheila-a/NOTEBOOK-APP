@@ -50,3 +50,10 @@ a:hover {
     align-items: center;
     justify-content: space-between;
 }
+
+.note:hover {
+    background: rgb(1, 48, 109);
+    color: white;
+    cursor: pointer;
+    transition: .8s ease;
+}
