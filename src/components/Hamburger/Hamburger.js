@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import HangingNav from "../HangingNav/HangingNav.js";
 
@@ -44,54 +44,27 @@ const StyledBurger = styled.div`
   }
 `;
 
-export const Burger = () => {
-  const [open, setOpen] = useState(false);
-  return (
-    <>
-      <StyledBurger
-        open={open}
-        onClick={() => setOpen(!open)}
-        className="Burger"
-      >
-        <div />
-        <div />
-        <div />
-      </StyledBurger>
-      <HangingNav open={open} />
-    </>
-  );
-};
+export default class Burger extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { open: false };
+  }
 
-// export class Burger extends React.Component {
-//   constructor(open) {
-//     super(open);
-//     // this.open = open;
-//     this.state = {
-//       open: false,
-//     };
+  toggleOpen = () => {
+    this.setState({ open: !this.state.open });
+  };
 
-//     this.clickFxn = this.clickFxn.bind(this);
-//   }
-
-//   clickFxn = (e) => {
-//     this.setState({ open: !this.state.open });
-//   };
-
-//   render() {
-//     return (
-//       <>
-//         <StyledBurger
-//           open={this.open}
-//           onClick={this.clickFxn}
-//           // onClick={() => this.setState(!this.open)}
-//           className="Burger"
-//         >
-//           <div />
-//           <div />
-//           <div />
-//         </StyledBurger>
-//         <HangingNav open={this.open} />
-//       </>
-//     );
-//   }
-// }
+  render() {
+    const { open } = this.state;
+    return (
+      <>
+        <StyledBurger open={open} onClick={this.toggleOpen} className="Burger">
+          <div />
+          <div />
+          <div />
+        </StyledBurger>
+        <HangingNav open={open} />
+      </>
+    );
+  }
+}

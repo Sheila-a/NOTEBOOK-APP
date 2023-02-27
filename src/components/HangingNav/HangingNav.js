@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 
 const UL = styled.div`
@@ -55,13 +55,19 @@ const UL = styled.div`
     }
   }
 `;
-const HangingNav = ({ open }) => {
-  return (
-    <UL open={open}>
-      <h1>Thank you !</h1>
-      <h3>For everything, Josh</h3>
-    </UL>
-  );
-};
 
-export default HangingNav;
+export default class HangingNav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { open: props.open };
+  }
+
+  render() {
+    return (
+      <UL open={this.state.open}>
+        <h1>Thank you !</h1>
+        <h3>For everything, Josh</h3>
+      </UL>
+    );
+  }
+}

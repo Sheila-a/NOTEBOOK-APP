@@ -1,4 +1,3 @@
-// import { sortedNotes } from "../../layouts/Sidebar/Sidebar.jsx";
 import Card from "../Card/Card.js";
 import design from "./CardList.module.css";
 
