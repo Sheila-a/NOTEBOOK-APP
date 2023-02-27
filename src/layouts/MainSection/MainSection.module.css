@@ -49,3 +49,29 @@ textarea {
     font-size: 1rem;
     line-height: 2rem;
 }
+
+
+.no_active_note {
+    width: 70%;
+    height: 100vh;
+    line-height: 100vh;
+    text-align: center;
+    font-size: 2rem;
+    color: #999;
+}
+
+@media screen and (max-width:584px) {
+    .main_section {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .main_editor,
+    .main_preview {
+        height: 25vh;
+    }
+
+    .main_editor textarea {
+        margin-bottom: 20vh;
+    }
+}

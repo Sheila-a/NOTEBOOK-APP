@@ -9,10 +9,11 @@ const UL = styled.div`
     display: flex;
     flex-direction: column;
     flex-flow: column nowrap;
-    background-color: #f2f;
+    background-color: rgb(186, 209, 226);
     ${"" /* margin-top: 4.5vh; */}
     position: fixed;
-    top: 2vh;
+    top: 0vh;
+    padding: 5vh;
     right: 0;
     height: 100vh;
     width: 30%;
@@ -57,8 +58,8 @@ const UL = styled.div`
 const HangingNav = ({ open }) => {
   return (
     <UL open={open}>
-      ding dong
-      <h1>selebrate</h1>
+      <h1>Thank you !</h1>
+      <h3>For everything, Josh</h3>
     </UL>
   );
 };
