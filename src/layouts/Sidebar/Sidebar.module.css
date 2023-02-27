@@ -12,11 +12,22 @@
 
 .side_head h1 {
     margin: 0;
+    color: rgb(0, 195, 255);
 }
 
 .side_notes {
     height: calc(100vh - 78px);
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
+}
+
+#deleting {
+    background-color: crimson;
+    color: white;
+}
+
+#deleting:hover {
+    background-color: rgb(156, 58, 78);
+    transition: .5s ease;
 }
 
 .side_single_note {
@@ -45,11 +56,14 @@
 
 .side_single_note:hover {
     background: #ddd;
-    transition: .9s ease;
+    transition: .5s ease;
 }
 
-.side_single_note.active,
-.side_single_note.active small {
+.side_single_note.active {
     background: #08c;
+    color: white;
+}
+
+.side_single_note.active small {
     color: white;
 }
